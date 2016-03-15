@@ -1,5 +1,6 @@
-Blog: PianoSearch Ruby Gem     by smithWEBtek
-https://github.com/smithWEBtek/piano_search
+Blog:  PianoSearch Ruby Gem by smithWEBtek
+Repo: https://github.com/smithWEBtek/piano_search
+Video walkthrough:
 
 Summary
 Version 0.1.0 PianoSearch
@@ -11,7 +12,9 @@ Searches and scrapes the Boston Craigslist Musical Instruments section for Yamah
 5. Prompts user to choose another post #, or 'list' to restart, or 'x' to exit.
 
 BUSINESS USE CASE
-The Ruby Gem PianoSearch is a basic measurement of used piano sales in Boston, to allow a piano dealer insight on the "competition" that exists in the used piano market. Potential buyers all face the decision of whether to buy used or new. The 2 piano models in PianoSearch are good measures of the market, very similar by analogy, to the Toyota Corolla and Toyota Camry in the auto market. (Basic cars that are Japansese-made and hold their value well.)
+The Ruby Gem PianoSearch is a basic measurement of used piano sales in Boston, to allow a piano dealer insight on the "competition" that exists in the used piano market. Potential buyers all face the decision of whether to buy used or new. 
+
+The 2 piano models in PianoSearch are good measures of the market, very similar by analogy, to the Toyota Corolla and Toyota Camry in the auto market. (Basic cars that are Japansese-made and hold their value well.)
 
 BUSINESS INTELLIGENCE CONCEPT
 The idea for this Gem comes from the basic premise that a business should be doing three (3) things with their data. 
@@ -24,10 +27,10 @@ The idea for this Gem comes from the basic premise that a business should be doi
 
     2. Predicting what will happen...
     Deducing from data measurements, the things that will likely happen in the future. 
-    Knowing that your donut shop sells out of chocolate most Friday nights, compared to almost zero chocolate donut sales on most Monday nights, is a valuable insight. This can help cash flow, product freshness and strategic planning for adding more workers on Friday nights, if needed. 
+    Knowing that your donut shop sells out of chocolate donuts most Friday nights, compared to almost zero chocolate donut sales on most Monday nights, is a valuable insight. This can help cash flow, product freshness and strategic planning for adding more workers on Friday nights, if needed. 
 
     3. Comparing & deciding what to do next...
-    Leveraging business data to answer questions both past and future, is essential to any enterprise that measures itself. Comparison data incorporates other data sets into the past and future data so that the business can now answer deeper questions that simply "what happened?" or "what might happen?". This allows the business leadership to make proactive decisions based on insights gleaned from market data. 
+    Leveraging business data to answer questions both past and future, is essential to any enterprise that measures itself. Comparison data incorporates other data sets into the past and future data so that the business can answer deeper questions than "what happened?" or "what might happen?". This allows the business leadership to make proactive decisions based on insights gleaned from market data. 
 
 TECHNICAL FLOW and FUNCTIONALITY in PianoSearch version 0.1.0
 Main URLs:
