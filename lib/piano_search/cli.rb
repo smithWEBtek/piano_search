@@ -1,5 +1,5 @@
 class PianoSearch::CLI
-  attr_accessor :brand, :model, :state, :area
+
   def call
     start
   end

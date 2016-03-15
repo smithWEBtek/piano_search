@@ -2,7 +2,6 @@ require 'open-uri'
 require 'Nokogiri'
 
 class PianoSearch::Post  
-  attr_accessor :headings, :price, :location, :headline, :description, :date, :posts, :post_id, :post_ids, :post_url, :post_urls, :post_ary
 
   def self.scrape_clu1
     doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=%22yamaha+u1%22"))
