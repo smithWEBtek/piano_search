@@ -40,7 +40,6 @@ class PianoSearch::Post
   end
 
   def self.show_headings
-    doc = ""
     @post_ary = []
     @post_hash = {}
     @post_urls.each_with_index do |url,i|

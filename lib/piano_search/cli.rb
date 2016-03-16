@@ -1,5 +1,4 @@
 class PianoSearch::CLI
-
   def call
     start
   end
