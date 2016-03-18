@@ -1,7 +1,93 @@
 require 'open-uri'
 require 'Nokogiri'
 
-class PianoSearch::Post  
+PianoSearch::Post .scrape_clu1
+PianoSearch::Post.scrape_clp22
+
+Scraper.scrape_common_pianos
+
+
+posts = [] 
+posts << clu1_scrape.scrape_posts
+posts << scrape_clp22.scrape_posts
+
+PianoListing.all #=> [#<Piano>, #<Piano>]
+
+class PianoListing
+  attr_accessor :price, :location, :url, :description
+  # What does PianoListing have now?
+  # 8, price, price=
+  @@all = []
+
+  def self.all
+    @@all
+  end
+
+  def similar_priced_pianos
+    @@all.select{|p| p.price.between?(self.price-100, self.price+100)}
+  end
+
+  def intialize
+    @@all << self # a particular piano
+  end
+end
+
+class Scraper
+  STATES = {
+    "New York" => "newyork",
+    "Boston" => "boston",
+    "San Franscico" => "sanfranscico"
+  }
+
+  def Scraper.scrape_common_pianos
+    clu1_scrape = PianoSearch::Scraper.new("yamaha u1", "New York")
+    scrape_clp22 = PianoSearch::Scraper.new("yamaha p22", "Boston")
+    scrape_u3 = PianoSearch::Scraper.new("yamaha u3", "Chicago")
+  end
+
+  def initialize(query, state)
+    @query = query
+    @state  = state
+  end
+
+  def scrape_posts
+    doc = Nokogiri::HTML(open("http://#{STATES[@state]}.craigslist.org/search/msa?query=#{@query}"))
+    doc.css("div.content p.row").each do |post_row|
+      <div class="row">
+        <a href="url"></a>
+        <span class="price">
+        <p clas="Description">
+        <span class="location"
+      </div>
+
+      piano_listing = PianoListing.new
+      piano_listing.url = post_row.css("a").attr("href").text
+      piano_listing.name = post_row.css("a").text
+      piano_listing.price = post_row.css("span.price").text
+
+    end
+  end
+end
+
+
+# How many posts should I have? 
+
+class PianoSearch::Post 
+
+  # Scraping Data - Scraper
+  # Displaying data in the CLI - CLI
+  # Storing about Posts - PianoListing
+
+
+  @@states_areas_urls = {}
+
+  # def self.scrape_states_areas_urls
+  #   doc = Nokogiri::HTML(open("https://www.craigslist.org/about/sites"))
+  #   doc.css("div.content").each do |state|
+  # binding.pry
+  #     @@states_areas_urls
+  #   end
+  # end
 
   def self.scrape_clu1
     doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=%22yamaha+u1%22"))
@@ -20,7 +106,7 @@ class PianoSearch::Post
   end
 
   def self.scrape_posts
-    @post_id = ""
+    @post_id = "" # Class Instance Variables
     @post_ids = []
     @posts.each do |item|
     @post_id = item.attributes["href"].value

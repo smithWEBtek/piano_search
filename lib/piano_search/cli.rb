@@ -1,5 +1,6 @@
 class PianoSearch::CLI
   def call
+    # PianoSearch::Post.scrape_states_areas_urls
     start
   end
 
@@ -7,9 +8,9 @@ class PianoSearch::CLI
     input = nil
     puts ""
     puts "🎹  Welcome to Boston Craigslist Piano Search 🎹"
-    puts "Please choose a state to search:"
-    state = gets.to_s.strip.downcase
+    # puts "Please choose a state to search:"
 
+    
     # scrape CL for states and areas
     # create arry of hashes with state, areas, area_urls
     # pass in argument of user's state choice
@@ -24,7 +25,7 @@ class PianoSearch::CLI
 
 
     until input == "x"
-      puts "Please enter 1 for Yamaha U1, or enter 2 for Yamaha P22:"     
+    puts "Please enter 1 for Yamaha U1, or enter 2 for Yamaha P22:"     
     input = gets.to_s.strip.downcase
 
       if input == "1"
