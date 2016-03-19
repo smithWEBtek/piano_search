@@ -1,5 +1,5 @@
 class PianoSearch::PianoListing
-  attr_accessor :all, :price, :headline, :location, :description, :url 
+  attr_accessor :price, :headline, :location, :description, :url 
   @@all = []
 
   def initialize
@@ -10,11 +10,30 @@ class PianoSearch::PianoListing
     @@all
   end
 
-  def display
+  def all
+    @@all = all
+  end
+
+  def self.reset
+    @@all.clear
+  end
+
+  def self.display_headlines
    @@all.each_with_index do |p,i|
-    puts "#{i+1}: #{p.price}......#{p.headling}"
+    puts "#{i+1}: #{p.price} #{p.headline}"
     end
-binding.pry
+    @@all.size
+  end
+
+  def self.display_user_choice(input)
+    puts "-------------------------------------------------------------"
+    puts @@all[input].price
+    puts @@all[input].headline
+    puts @@all[input].location
+    puts @@all[input].description
+    self.reset
+    puts ""
+    puts ""
   end
 
 end
