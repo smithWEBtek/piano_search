@@ -1,10 +1,15 @@
 class PianoSearch::Scraper
 
   def self.scrape_cl(search_phrase)
-
-    url = "http://boston.craigslist.org/search/msa?query=#{search_phrase}"
+    # doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=\"#{user_query}\""))
+    # doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=\"#{user_query}\""))
+  
+    # url = "http://boston.craigslist.org/search/msa?query=#{search_phrase}"
     # binding.pry  
-    doc = Nokogiri::HTML(open(url))
+    # doc = Nokogiri::HTML(open(url))
+
+    doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=#{search_phrase}"))
+  
 
     doc.css("p.row").each do |i|
       listing = PianoSearch::PianoListing.new

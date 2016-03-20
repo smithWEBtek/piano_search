@@ -15,8 +15,7 @@ class PianoSearch::CLI
     puts "Enter 1 for Yamaha U1, 2 for Yamaha P22:"     
       @input = gets.strip.downcase    
       if @input == "1"; @user_query = "%22yamaha+u1%22"; display
-      elsif @input == "2"; @user_query = "%22yamaha+u1%22"; display
-      elsif @input == "3"; @user_query = "%22yamaha+22%22"; display
+      elsif @input == "2"; @user_query = "yamaha"; display
       elsif @input == "x"; goodbye
       elsif @input.match(/[1,2,x]/) != true; puts "Invalid entry.....please choose again."
       else
