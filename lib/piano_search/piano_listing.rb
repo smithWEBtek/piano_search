@@ -10,10 +10,6 @@ class PianoSearch::PianoListing
     @@all
   end
 
-  def all
-    @@all = all
-  end
-
   def self.reset
     @@all.clear
   end
@@ -31,7 +27,7 @@ class PianoSearch::PianoListing
     puts @@all[input].headline
     puts @@all[input].location
     puts @@all[input].description
-    self.reset
+    # self.reset
     puts ""
     puts ""
   end
