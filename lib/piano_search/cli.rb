@@ -5,11 +5,11 @@ class PianoSearch::CLI
     @input = nil
     @user_query = ""
     @user_choice = ""
-    search
+    menu
   end
 
-  def search
-    puts "Welcome to Boston Craigslist Piano Search"
+  def menu
+    puts "Welcome to Boston Craigslist Piano Search - Main Menu"
       until @input == "x"
     puts "🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹🎹"
     puts "Enter 1 for Yamaha U1, 2 for Yamaha P22:"     
@@ -29,6 +29,13 @@ class PianoSearch::CLI
     PianoSearch::PianoListing.display_headlines
       @input = gets.to_i-1
     PianoSearch::PianoListing.display_user_choice(@input)
+    # puts "Choose 'post #' to see details, 'menu to return to main menu, 'x' to exit."
+    # @input = gets.strip.downcase
+    # if @input == 'list'; menu
+    # elsif @input == 'x'; goodbye
+    # elsif @input 
+
+
   end
 
   def goodbye

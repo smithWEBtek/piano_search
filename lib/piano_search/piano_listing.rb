@@ -20,7 +20,7 @@ class PianoSearch::PianoListing
 
   def self.display_headlines
    @@all.each_with_index do |p,i|
-    puts "#{i+1}: #{p.price} #{p.headline}"
+    puts "#{i+1}:  #{p.price} #{p.headline}"
     end
     @@all.size
   end
