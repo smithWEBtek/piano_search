@@ -13,7 +13,7 @@ class PianoSearch::Scraper
     @url_id << row.search("a").attr(name="href").value
     @url_id.delete_if {|i| i.include?("//")}
     end
-    self.scrape_url
+    scrape_url
   end
 
   def scrape_url

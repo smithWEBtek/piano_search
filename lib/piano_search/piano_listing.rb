@@ -26,7 +26,7 @@ class PianoSearch::PianoListing
     puts @@all[input].headline
     puts @@all[input].location
     puts @@all[input].detail
-    self.reset
+    # self.reset
     puts ""
     puts ""
   end
