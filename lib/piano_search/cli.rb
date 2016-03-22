@@ -12,11 +12,13 @@ class PianoSearch::CLI
     puts "🎹 MENU: Boston Craigslist Piano Search 🎹"
     puts "Enter: [1]=Yamaha U1    [2]=Yamaha P22    [x]=exit"     
       @input = gets.to_s.strip.downcase
-      if @input == "1"; @search_choice = "%22yamaha+u1%22"; 
+      if @input == "1" 
+        @search_choice = "yamaha u1"
         data
-      elsif @input == "2"; @search_choice = "%22yamaha+p22%22"; 
+      elsif @input == "2"
+        @search_choice = "yamaha p22"
         data
-      elsif @input == "x";
+      elsif @input == "x"
         exit
       else 
       end
@@ -35,7 +37,9 @@ class PianoSearch::CLI
   end
 
   def headlines
-    PianoSearch::PianoListing.headlines
+    PianoSearch::PianoListing.all.each_with_index do |p,i|
+      puts "# #{i+1}:  #{p.price} #{p.headline}"
+    end
     details
   end
 
@@ -44,10 +48,19 @@ class PianoSearch::CLI
     @post_choice = gets.strip
     @int = @post_choice.to_i-1
     if @int.between?(0,PianoSearch::PianoListing.all.size);
-      PianoSearch::PianoListing.detail(@int)
+      choice = PianoSearch::PianoListing.all[@int]
+      puts "-------------------------------------------------------------"
+      puts choice.price
+      puts choice.headline
+      puts choice.location
+      puts choice.detail
+      puts ""
+      puts ""
       details
-    elsif @post_choice.to_s == "m"; menu
-    elsif @post_choice.to_s == "x"; exit
+    elsif @post_choice.to_s == "m"
+      menu
+    elsif @post_choice.to_s == "x" 
+      exit
     else 
       invalid
       headlines
