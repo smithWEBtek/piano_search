@@ -8,8 +8,11 @@ class PianoSearch::Scraper
 
   def get_url_id(search)
     @url_id = []
-    doc = Nokogiri::HTML(open("http://boston.craigslist.org/search/msa?query=\"#{search}\""))
+    doc = Nokogiri::HTML(open("https://drive.google.com/folderview?id=0B-tirJPDhz8BYVE1R0gycTlNdjQ&usp=drive_web"))
     doc.css("p.row").each do |row|
+    
+binding.pry
+
     @url_id << row.search("a").attr(name="href").value
     @url_id.delete_if {|i| i.include?("//")}
     end
